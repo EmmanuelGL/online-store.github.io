@@ -1,0 +1,24 @@
+<% include partials/head.ejs %>	
+
+<h1>Lista de productos</h1>
+<main>
+	<% for(var i = 0; i < productos.length; i++) { %>
+        <div class="producto">
+			<h1><%= productos[i].nombre %></h1>  
+			<img src='<%= productos[i].img %>' class="img-index"  alt="Productos">
+			<div class="text-content">
+				<p><%= productos[i].descripcion %></p>
+			</div>
+			<span><%= productos[i].precio %></span>
+			<hr>
+			<footer>
+				  <p>Publicado:</p>
+				  <time datetime=<%= productos[i].fecha_publicacion %>><%= productos[i].fecha_publicacion %></time>
+				  <a class="btn-warning" href="javascript:carro(${productos[i].id});">Agregar a carrito</a>
+			</footer>
+		</div> 
+
+	<% }%>
+</main>
+
+<% include partials/foot.ejs %>	
