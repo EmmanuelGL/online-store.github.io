@@ -6,10 +6,11 @@ const indexController = require('../controllers/index');
 router.get('/', indexController.index);
 // ruta de mostrar productos en tabla 
 router.get('/productos', indexController.getProductos)
-router.post('/new-product', indexController.addProduct);
+
 
 // ruta de crear new producto
-
+router.get('/nuevo-producto', indexController.getAddProductos)
+router.post('/nuevo-producto', indexController.addProduct);
 // ruta de editar producto formulario
 
 // ruta de agregar nuevo carrito

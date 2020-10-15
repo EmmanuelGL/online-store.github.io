@@ -52,12 +52,13 @@ var productos = [
 	},
   ]
   
-
+var time = new Date();
 const index = (req, res, next) => {
 	res.render('index', {
 		productos
 	});
 };
+
 const getProductos = (req, res, next) => {
 	res.render('products', {
 		productos
@@ -69,23 +70,35 @@ const getCarrito = (req, res, next) => {
 		productos
 	});
 };
-
+// new products
+const getAddProductos = (req, res) => {
+	
+	res.render('productsNew');
+};
 const addProduct = (req, res) => {
 
-	var newItem = req.body.newItem;
+	var newItem = req.body;
 	console.log(newItem);
-
-	items.push({
-		id: items.length + 1,
-		name: newItem
+	productos.push({
+		id:productos.length+1,
+		nombre: newItem.nombre1,
+		img: newItem.img1,
+		descripcion: newItem.descripcion1,
+		precio: newItem.precio1,
+		fecha_publicacion: time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear() + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds(),
+		stock: newItem.stock1,
+		categoria: newItem.categoria1,
 	});
+	console.log('-------'+JSON.stringify(productos));
+	
 
-	res.redirect('/products');
+	res.redirect('/nuevo-producto');
 };
 
 module.exports = {
   index,
   getCarrito,
   getProductos,
+  getAddProductos,
   addProduct
 };

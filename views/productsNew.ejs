@@ -1,0 +1,64 @@
+<% include partials/head %>
+
+
+
+<div class="contenido-form" id="modal">
+    <form action="/nuevo-producto"  method="POST">
+        <div class="row">
+            <div class="col-25">
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="nombre1" name="nombre1" placeholder="Nombre del producto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="img">Imagen del producto</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="img1" name="img1"
+                    placeholder="Ingresa una  'url' de una imagen">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="descripcion">Descripción</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="descripcion1" name="descripcion1"
+                    placeholder="Desdripción del producto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="precio">Precio</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="precio1" name="precio1" placeholder="Precio del producto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="stock">Cantidad</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="stock1" name="stock1" placeholder="Cantidades del producto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="categoria">Categoria</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="categoria1" name="categoria1" placeholder="Categoria">
+            </div>
+        </div>
+        <div class="row">
+            <button class="new">Guardar</button>
+            
+        </div>
+    </form>
+</div>
+
+<% include partials/foot %>
